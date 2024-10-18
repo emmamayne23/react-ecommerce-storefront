@@ -41,7 +41,26 @@ const Cart = ({ isOpen, closeCart, cartItems, removeItem, totalPrice }) => {
                                     <div className="border w-full px-2 py-2 flex justify-between items-center gap-2 my-1">
                                         <h1>{item.name}</h1>
                                         <span>{item.price}</span>
-                                        <button onClick={() => removeItem(item.product.id)} className="text-red-500 hover:underline">Remove</button>
+                                        {/*<button 
+                                            onClick={() => updateItemQuantity(item.id, -1)} 
+                                            className="border px-1.5"
+                                            disabled={item.quantity <= 1}
+                                            >
+                                            -
+                                        </button>*/}
+                                        <input 
+                                            type="text" 
+                                            value={item.quantity} 
+                                            readOnly 
+                                            className="w-5 text-center focus:outline-none bg-transparent"
+                                        />
+                                        {/*<button 
+                                            onClick={() => updateItemQuantity(item.id, 1)} 
+                                            className="border px-1"
+                                            >
+                                            +
+                                        </button>*/}
+                                        <button onClick={() => removeItem(item.id)} className="text-red-500 hover:underline"><i className="fas fa-times"></i></button>
                                     </div>
                                 </div>
                             )) }
